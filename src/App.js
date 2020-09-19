@@ -15,7 +15,7 @@ function App() {
           <Info />
           <Contact />
         </Route>
-        <Route path='/pizzas'>
+        {/* <Route path='/pizzas'>
           <Menu />
         </Route>
         <Route path='/about us'>
@@ -23,7 +23,7 @@ function App() {
         </Route>
         <Route path='/order'>
           <Order />
-        </Route>
+        </Route> */}
           
       <Router />
 
