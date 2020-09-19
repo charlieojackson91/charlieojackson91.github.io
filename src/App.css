@@ -1,38 +1,204 @@
-.App {
-  text-align: center;
+html, body {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------------------ HOMEPAGE ----------------------------------------------------------------- */
+
+
+/* NAVIGATION */
+.navigation {
+  width: 50%;
+  margin: auto;
+  padding: 20px 0 10px 0;
+}
+
+.navigation ul {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.navigation a {
+  font-size: 2rem;
+  padding: 5px;
+}
+
+/* BANNER */
+.banner {
+  position: relative;
+}
+
+#logo {
+  position: absolute;
+  top: -50px;
+  left: 50px;
+}
+
+.bannerImg {
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+}
+
+.bannerBox {
+  position: absolute;
+  bottom: 100px;
+  left: 100px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2.5px;
+  width: 30%;
+}
+
+.bannerBox p {
+  font-size: 1.5rem;
+}
+
+/* TIMETABLES */
+.van-pizzeria-divide {
+  display: flex;
+  justify-content: space-around;
+}
+
+.vans {
+  border: 1px solid magenta;
+  width: 40%;
+  background: #45423F;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: solid #C6DB90 4px;
+}
+
+.rightColumn {
+  width: 40%;
+}
+
+.pizzeria {
+  border: 1px solid magenta;
+  background: #45423F;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: solid #C6DB90 4px;
+}
+
+.popUpImg {
+  width: 100%;
+}
+
+
+/* VANS */
+#today {
+  background: #a3bd5c;
+}
+
+.vanLocations {
+  background: #e3edca;
+  color: black;
+  text-align: left;
+  padding: 2.5px;
+}
+
+.vanLocation {
+  display: flex;
+
+}
+
+.vanLocation:hover {
+  background: #e0ff91;
+  cursor: pointer;
+}
+
+.vanDateTime {
+  margin-right: 10px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 7.5px;
+  border: solid #C6DB90 1px;
+  font-size: 1.25rem;
+  background: #e3edca;
+  margin: 15px;
+}
+
+.btn:hover {
+  background: #a3bd5c;
+}
+
+.btn a:hover {
+  text-decoration: none;
+}
+
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  background: #45423F;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.footerNav ul {
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footerNav li {
+  padding-right: 10px;
+  color: #a3bd5c;
+}
+
+.footerNav a {
+  color: #a3bd5c;
+}
+
+.socialLinks a {
+  color: white;
+}
+
+/* ----------------------------------------------- ABOUT US ---------------------------------------------------------------- */
+
+.textContent {
+  margin: 50px 70px;
+}
+
+#aboutUsImg {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.gallery {
+  margin: 70px 0;
+}
+
+.galleryRow img {
+  width: 25%;
 }
