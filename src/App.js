@@ -11,6 +11,7 @@ import Vans from './components/Vans';
 import Pizzeria from './components/Pizzeria';
 import Content from './components/Content';
 import Gallery from './components/Gallery';
+import Menu from './components/Menu';
 
 // application
 function App() {
@@ -46,12 +47,13 @@ function App() {
             alt='close up of nduja pizza'
           />
           <Content
-          title='Pizza'
+          title='Pizzas'
           text='The menu takes influence both from old age recipes and millennial eating habits. London can now enjoy pizza made in the finest traditions with added quirks for a new era of taste buds.
 
           The base ingredients come directly from Italy and the fresh veg, meat and cheese are sourced from local butchers and farmer’s markets.
           
           The secret’s in the dough; you won’t want to throw away the crusts. This is where carnivores and veggies unite in the name of decent pizza.'/>
+          <Menu/>
         </Route>
 
 
