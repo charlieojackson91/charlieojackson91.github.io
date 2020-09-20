@@ -1,13 +1,14 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
-const Header = () => {
+const Header = ({preoders}) => {
     return(
         <div className='navigation'>
             <ul>
-                <li><a href='/'>Hello</a></li>
-                <li><a href='/pizza'>Pizza</a></li>
-                <li><a href='/about-us'>About us</a></li>
-                <li><a href='/order'>Pre order</a></li>
+                <li><Link to='/'>Hello</Link></li>
+                <li><Link to='/pizza'>Pizza</Link></li>
+                <li><Link to='/about-us'>About us</Link></li>
+                <li><Link to='/order'>Pre order</Link>{preoders.length}</li>
             </ul>
         </div>
     )

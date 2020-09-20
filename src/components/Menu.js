@@ -41,7 +41,7 @@ import Pizza from './Pizza';
 // price='3'
 // ingredients='2 for £5 (contains nuts)'/>
 
-const Menu = () => {
+const Menu = ({addPreoder}) => {
     const [menu, setMenu] = useState('Van Menu');
     const menusObj = {
         'Van Menu': [
@@ -106,6 +106,7 @@ const Menu = () => {
                                 name={pizza.name}
                                 price={pizza.price}
                                 ingredients={pizza.ingredients}
+                                addPreoder={()=>addPreoder(pizza)}
                             />
                         )
                     }
