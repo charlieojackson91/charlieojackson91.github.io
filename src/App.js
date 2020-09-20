@@ -1,5 +1,5 @@
 // module imports
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
@@ -13,8 +13,20 @@ import Content from './components/Content';
 import Gallery from './components/Gallery';
 import Menu from './components/Menu';
 
+const menusObj = {
+  'VanMenu'       : 0,
+  'PopupPizzeria' : 1 
+}
+
 // application
 function App() {
+  const [menu, setMenu] = useState(menusObj.VanMenu);
+  
+  function changeMenuHandler(e){
+    let menuSelection = e.target.textContent.replace(' ', '').replace('-','').trim()
+    setMenu(menusObj[menuSelection]);
+  }
+
   return (
     <div>
       <Router>
@@ -53,7 +65,11 @@ function App() {
           The base ingredients come directly from Italy and the fresh veg, meat and cheese are sourced from local butchers and farmer’s markets.
           
           The secret’s in the dough; you won’t want to throw away the crusts. This is where carnivores and veggies unite in the name of decent pizza.'/>
-          <Menu/>
+          
+          <Menu
+          menuSelection={changeMenuHandler}
+          menuSelected={menu}/>
+          
         </Route>
 
 
