@@ -233,7 +233,7 @@ footer {
   cursor: pointer;
 }
 
-#selected {
+.selected {
   background: #C6DB90;
 }
 

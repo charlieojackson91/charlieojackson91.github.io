@@ -13,20 +13,11 @@ import Content from './components/Content';
 import Gallery from './components/Gallery';
 import Menu from './components/Menu';
 
-const menusObj = {
-  'VanMenu'       : 0,
-  'PopupPizzeria' : 1 
-}
+
 
 // application
 function App() {
-  const [menu, setMenu] = useState(menusObj.VanMenu);
   
-  function changeMenuHandler(e){
-    let menuSelection = e.target.textContent.replace(' ', '').replace('-','').trim()
-    setMenu(menusObj[menuSelection]);
-  }
-
   return (
     <div>
       <Router>
@@ -66,9 +57,7 @@ function App() {
           
           The secret’s in the dough; you won’t want to throw away the crusts. This is where carnivores and veggies unite in the name of decent pizza.'/>
           
-          <Menu
-          menuSelection={changeMenuHandler}
-          menuSelected={menu}/>
+          <Menu />
           
         </Route>
 
