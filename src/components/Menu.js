@@ -1,45 +1,8 @@
 import React,{useState} from 'react';
 import Pizza from './Pizza';
+import {Link} from "react-router-dom";
 
-// <Pizza
-// name='Duck'
-// price='9'
-// ingredients='Confit duck, garlic oil, hoisin, spring onions, chillies & cucumber'/>
 
-// <Pizza
-// name='Vegan (vg)'
-// price='9'
-// ingredients='Vegan cheese, spinach, red onion, sunblush tomatoes, portobello mushrooms & kalamata olives'/>
-
-// <Pizza
-// name='Garlic Flat Bread'
-// price='5'
-// ingredients='Garlic, rosemary & oregano'/>
-
-// <Pizza
-// name='Honey & Seeded Flat Bread'
-// price='6'
-// ingredients='Garlic, poppy & sesame seeds with a Honey Drizzle'/>
-
-// <Pizza
-// name='Dips'
-// price='1'
-// ingredients='Aioli, spicy aioli, pesto aioli'/>
-
-// <Pizza
-// name='Extras'
-// price='9'
-// ingredients='Olives, pineapple, chillies, rocket'/>
-
-// <Pizza
-// name='Glazed & Seeded'
-// price='1'
-// ingredients='Honey glazed crust with poppy & sesame seeds'/>
-
-// <Pizza
-// name='Gourmet Brownies'
-// price='3'
-// ingredients='2 for £5 (contains nuts)'/>
 
 const Menu = ({addPreoder}) => {
     const [menu, setMenu] = useState('Van Menu');
@@ -64,6 +27,51 @@ const Menu = ({addPreoder}) => {
                 name:'Vegetarian (v)',
                 price:'8',
                 ingredients:'Red onion, baby spinach, mushrooms, baby plum tomatoes & parmesan'
+            },
+            {
+                name:'Ham and Mushroom',
+                price:'8',
+                ingredients:'Wiltshire ham, portobello mushrooms'
+            },
+            {
+                name:'Duck',
+                price:'9',
+                ingredients:'Confit duck, garlic oil, hoisin, spring onions, chillies & cucumber'
+            },
+            {
+                name:'Vegan (vg)',
+                price:'9',
+                ingredients:'Vegan cheese, spinach, red onion, sunblush tomatoes, portobello mushrooms & kalamata olives'
+            },
+            {
+                name:'Garlic Flat Bread',
+                price:'5',
+                ingredients:'Garlic, rosemary & oregano'
+            },
+            {
+                name:'Honey & Seeded Flat Bread',
+                price:'6',
+                ingredients:'Garlic, poppy & sesame seeds with a Honey Drizzle'
+            },
+            {
+                name:'Dips',
+                price:'1',
+                ingredients:'Aioli, spicy aioli, pesto aioli'
+            },
+            {
+                name:'Extras',
+                price:'1',
+                ingredients:'Olives, pineapple, chillies, rocket'
+            },
+            {
+                name:'Glazed & Seeded',
+                price:'1',
+                ingredients:'Honey glazed crust with poppy & sesame seeds'
+            },
+            {
+                name:'Gourmet Brownies',
+                price:'3',
+                ingredients:'2 for £5 (contains nuts)'
             }
         ],
         'Pop-up Pizzeria': [
@@ -110,7 +118,7 @@ const Menu = ({addPreoder}) => {
                             />
                         )
                     }
-                    
+                    <button className='btn'><Link to='/order'>View order</Link></button>
                 </div> 
             </div> 
                 

@@ -31,7 +31,7 @@ const Preoder = ({data})=>{
 		);
 		setTotal(
 			data.reduce((sum,pizza)=>sum+= +pizza.price,0)
-		)
+		);
 	},[data]);
 
 	useEffect(()=>{
@@ -52,14 +52,10 @@ const Preoder = ({data})=>{
 					})
 				}
 			}
-			
 
 		}
 		setTimeSlots(slots)
 		console.log(now.getHours(),now.getMinutes())
-
-		
-
 	},[])
 
 	function setAmount(key,direction){

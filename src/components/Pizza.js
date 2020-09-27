@@ -2,17 +2,19 @@ import React from 'react';
 
 const Pizza = (props) => {
     return (
-        <div>
+        <div className='pizzaCont'>
             <div className='menuCols'>
                 <h4>{props.name}</h4>
                 <div>
+                <span>£{props.price}</span>
 	                <button
 	                	onClick={props.addPreoder}
-	                	style={{marginRight: '10px'}}
+                        style={{marginRight: '10px'}}
+                        className='orderBtn'
 	                >
-	                	add to preoder list
+	                	add to order
 	                </button>
-                	<span>£{props.price}</span>
+                	
                 </div>
             </div>
             <p>{props.ingredients}</p>

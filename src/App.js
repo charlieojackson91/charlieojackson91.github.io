@@ -1,5 +1,5 @@
 // module imports
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route,Switch} from "react-router-dom";
 
@@ -15,15 +15,46 @@ import Menu from './components/Menu';
 import Preoder from './components/Preoder';
 import Sale from './components/Sale';
 
-
 // application
 function App() {
   
-  // set preorders to empty array 
-  const [preoders, setPreoders] = useState([])
+  // set preorders to empty array and working vans
+  const [preoders, setPreoders]  = useState([]);
+  const vansShift = [
+    {vanID:1, vanLocation:'Thames Ditton', hours:'4-9'},
+    {vanID:2, vanLocation:'Long Ditton', hours:'4-9'},
+    {vanID:3, vanLocation:'East Molesey', hours:'4:30-9'},
+    {vanID:4, vanLocation:'Cobham', hours:'5-9'}
+  ];
 
   // update preorders with existing orders plus new order
-  const addPreoder = (preorder) => setPreoders([...preoders, preorder])
+  const addPreoder = (preorder) => setPreoders([...preoders, preorder]);
+
+  // count down timer
+  // const [countDown, setCountDown] = useState([])
+
+  //   const orderTime = new Date();
+  //   orderTime.setHours(17);
+  //   orderTime.setMinutes(0);
+  //   orderTime.setMinutes(0);
+  //   orderTime.setSeconds(0);
+  //   orderTime.setMilliseconds(0);
+
+  //   useEffect(() => {
+  //       let distance = orderTime - new Date().getTime()
+  //       let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  //       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  //       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  //       setCountDown({hours, minutes, seconds})
+  //   }, [])
+
+  //   setInterval(() => {
+  //       let distance = orderTime - new Date().getTime()
+  //       let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  //       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  //       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  //       setCountDown({hours, minutes, seconds})
+  //   }, 1000)
   
   return (
     <div>
@@ -63,7 +94,9 @@ function App() {
 
             The base ingredients come directly from Italy and the fresh veg, meat and cheese are sourced from local butchers and farmer’s markets.
             
-            The secret’s in the dough; you won’t want to throw away the crusts. This is where carnivores and veggies unite in the name of decent pizza.'/>
+            The secret’s in the dough; you won’t want to throw away the crusts. This is where carnivores and veggies unite in the name of decent pizza.'
+            
+            vans={vansShift}/>
             
             <Menu addPreoder={addPreoder}/>
             
@@ -96,7 +129,7 @@ function App() {
             />
             <Content
               title='View your orders'
-              text="Pre order a pizza before 12pm, schedule when you want to collect it and we'll have it ready! No more calling and waiting in the queue!"
+              text="Pre order a pizza before 5pm, schedule when you want to collect it and we'll have it ready! No more calling and waiting in the queue!"
             />
             <Preoder data={preoders}/>
           </Route>
