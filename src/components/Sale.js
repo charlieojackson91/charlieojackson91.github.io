@@ -5,7 +5,7 @@ const Sale = (props) => {
         props.data.length 
         ?
             <div className='textContent'>
-                <h1>Thank you for your business</h1>
+                <h1>Thank you for your order</h1>
                 <p>Order pizzas/ total will sit here</p>
             </div>
         :

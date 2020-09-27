@@ -52,7 +52,7 @@ function App() {
 
 
           {/* ---------------------------------------------- PIZZA MENU ------------------------------------------------------------------ */}
-          <Route path='/pizza' exact>
+          <Route path='/pizza'>
             <Banner 
               img='http://thedoughshack.co.uk/wp-content/uploads/2017/05/Pizza-header-resized.jpg'
               alt='close up of nduja pizza'
@@ -71,7 +71,7 @@ function App() {
 
 
           {/* ---------------------------------------------- ABOUT US --------------------------------------------------------------------- */}
-          <Route path='/about-us' exact>
+          <Route path='/about-us'>
             <Banner 
               img='http://thedoughshack.co.uk/wp-content/uploads/2016/06/About-header-resized.jpg'
               alt='the dough shack logo'
@@ -89,7 +89,7 @@ function App() {
 
 
           {/* ----------------------------------------------- PRE ORDER -------------------------------------------------------------------- */}
-          <Route path='/order' exact>
+          <Route path='/order'>
             <Banner 
               img='http://thedoughshack.co.uk/wp-content/uploads/2016/06/About-header-resized.jpg'
               alt='the dough shack logo'
@@ -104,7 +104,7 @@ function App() {
 
         {/* ----------------------------------------------- SALE CONFIRMATION --------------------------------------------------------------------  */}
 
-        <Route path='/confirmation' exact>
+        <Route path='/confirmation'>
             <Banner 
               img='http://thedoughshack.co.uk/wp-content/uploads/2016/06/About-header-resized.jpg'
               alt='the dough shack logo'

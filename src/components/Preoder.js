@@ -3,9 +3,17 @@ import React,{useState,useEffect} from 'react';
 let token = 'YOUR_TOKEN'
 let orderNumber = new Date();
 
+
+let dataBaseOrders={
+	'15:00': 3,
+	'14:10': 5
+}
+
+
 const Preoder = ({data})=>{
 	const [list,setList] = useState({})
 	const [total,setTotal] = useState(0)
+	const [timeSlots,setTimeSlots] = useState([])
 
 	useEffect(()=>{
 		setList(
@@ -25,6 +33,54 @@ const Preoder = ({data})=>{
 			data.reduce((sum,pizza)=>sum+= +pizza.price,0)
 		)
 	},[data]);
+
+	useEffect(()=>{
+		let now = new Date()
+
+		let slots = []
+		for(let i=12; i<20; i++){
+			if(i<now.getHours()){
+				slots.push({
+					time:`${i}:00`,
+					disabled: true
+				})
+			}else{
+				for(let j=0; j<60; j+=5){
+					slots.push({
+						time:`${i}:${j<10?'0'+j:j}`,
+						disabled: i<now.getHours()?true: (j<now.getMinutes()+20 && i<=now.getHours())?true:false
+					})
+				}
+			}
+			
+
+		}
+		setTimeSlots(slots)
+		console.log(now.getHours(),now.getMinutes())
+
+		
+
+	},[])
+
+	function setAmount(key,direction){
+		let newList = {...list}
+		let price = newList[key].subtotal/newList[key].amount
+		if(direction==='+'){
+			newList[key].amount += 1
+		}else if(direction==='-'){
+			newList[key].amount -= 1
+		}
+		if(newList[key].amount === 0){
+			delete newList[key]
+		}else{
+			newList[key].subtotal = price * newList[key].amount
+		}
+		
+		setList(newList)
+		setTotal(
+			Object.values(newList).reduce((sum,pizza)=>sum+= +pizza.subtotal,0)
+		)
+	}
 
 	const makePayment = totalPrice=>{
 		fetch('https://api.sandbox.paypal.com/v1/payments/payment',{
@@ -76,7 +132,7 @@ const Preoder = ({data})=>{
 		?
 			<div>
 				<div className='orderList'>
-					<table className='orderTable'>
+					<table className='orderTable' >
 						<tr>
 							<th>Pizza</th>
 							<th>Amount</th>
@@ -85,10 +141,21 @@ const Preoder = ({data})=>{
 						</tr>
 						{
 							Object.keys(list).map(pizza=>
-								<tr><td>{pizza}</td><td>{list[pizza].amount}</td> <td>{list[pizza].subtotal}</td><td>+ / -</td></tr>
+								<tr>
+									<td>{pizza}</td>
+									<td class='right'>{list[pizza].amount}</td>
+									<td class='right'>{list[pizza].subtotal}</td>
+									<td class='center'>
+										<button onClick={()=>setAmount(pizza,'+')}>+</button>
+										{' '}/{' '}
+										<button onClick={()=>setAmount(pizza,'-')}>-</button>
+									</td>
+								</tr>
 							)
 						}
-						<tr><td></td><td></td><td id='sumOrder'>{total}</td></tr>
+						<tr>
+							<td colSpan={3} class='right' id='sumOrder'>{total}</td>
+						</tr>
 					</table>
 					<form className='orderForm'>
 						<fieldset>
@@ -97,8 +164,17 @@ const Preoder = ({data})=>{
 							<select>
 								<option value=''>choose your time</option>
 								{
-									['11:00','13:00','15:00'].map(time=>
-										<option value={time}>{time}</option>
+									timeSlots.map(time=>
+										<option 
+											value={time.time} 
+											disabled={
+												dataBaseOrders[time.time] 
+												|| 
+												time.disabled
+											}
+										>
+											{time.time}
+										</option>
 									)
 								}
 							</select>
