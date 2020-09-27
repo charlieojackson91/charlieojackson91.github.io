@@ -75,33 +75,49 @@ const Preoder = ({data})=>{
 		data.length
 		?
 			<div>
-				<ul>
-					{
-						Object.keys(list).map(pizza=>
-							<li>{pizza} amount: {list[pizza].amount}, subtotal: £{list[pizza].subtotal}</li>
-						)
-					}
-
-				</ul>
-				Total: £ {total}
-				<fieldset>
-					<legend> choose pickup time</legend>
-					<input type='date' placeholder='choose date' />
-	 				<select>
-						<option value=''>choose your time</option>
+				<div className='orderList'>
+					<table className='orderTable'>
+						<tr>
+							<th>Pizza</th>
+							<th>Amount</th>
+							<th>Cost £</th>
+							<th>Amend order</th>
+						</tr>
 						{
-							['11:00','13:00','15:00'].map(time=>
-								<option value={time}>{time}</option>
+							Object.keys(list).map(pizza=>
+								<tr><td>{pizza}</td><td>{list[pizza].amount}</td> <td>{list[pizza].subtotal}</td><td>+ / -</td></tr>
 							)
 						}
-					</select>
-				</fieldset>
-
-				<button onClick={()=>makePayment(total)}>Confirm and pay for preoder</button>
+						<tr><td></td><td></td><td id='sumOrder'>{total}</td></tr>
+					</table>
+					<form className='orderForm'>
+						<fieldset>
+							<legend> Choose pickup time and van</legend>
+							<input type='date' placeholder='choose date' />
+							<select>
+								<option value=''>choose your time</option>
+								{
+									['11:00','13:00','15:00'].map(time=>
+										<option value={time}>{time}</option>
+									)
+								}
+							</select>
+							<select>
+								<option value=''>choose your van</option>
+								{
+									['Thames Ditton', 'Long Ditton', 'East Molesey'].map(location =>
+										<option value={location}>{location}</option>
+									)
+								}
+							</select>
+						</fieldset>
+						<button onClick={()=>makePayment(total)} className='btn'>Confirm and pay for preoder</button>
+					</form>
+				</div>
 			</div>
 		:
-			<div>
-				You don't have any pizza pre order yet
+			<div className='orderList'>
+				You don't have any pre orders yet - please choose from <a href='./pizza'>our menu</a>
 			</div>
 	)
 }

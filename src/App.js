@@ -13,14 +13,16 @@ import Content from './components/Content';
 import Gallery from './components/Gallery';
 import Menu from './components/Menu';
 import Preoder from './components/Preoder';
-
+import Sale from './components/Sale';
 
 
 // application
 function App() {
+  
+  // set preorders to empty array 
   const [preoders, setPreoders] = useState([])
 
-
+  // update preorders with existing orders plus new order
   const addPreoder = (preorder) => setPreoders([...preoders, preorder])
   
   return (
@@ -93,13 +95,24 @@ function App() {
               alt='the dough shack logo'
             />
             <Content
-              title='Pre order a pizza'
+              title='View your orders'
               text="Pre order a pizza before 12pm, schedule when you want to collect it and we'll have it ready! No more calling and waiting in the queue!"
             />
             <Preoder data={preoders}/>
           </Route>
-        </Switch>
+        
 
+        {/* ----------------------------------------------- SALE CONFIRMATION --------------------------------------------------------------------  */}
+
+        <Route path='/confirmation' exact>
+            <Banner 
+              img='http://thedoughshack.co.uk/wp-content/uploads/2016/06/About-header-resized.jpg'
+              alt='the dough shack logo'
+            />
+            <Sale data={preoders}/>
+          </Route>
+        
+        </Switch>
       </Router>
       <Footer/>
     </div>

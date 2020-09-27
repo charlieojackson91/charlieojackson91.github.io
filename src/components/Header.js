@@ -8,7 +8,7 @@ const Header = ({preoders}) => {
                 <li><Link to='/'>Hello</Link></li>
                 <li><Link to='/pizza'>Pizza</Link></li>
                 <li><Link to='/about-us'>About us</Link></li>
-                <li><Link to='/order'>Pre order</Link>{preoders.length}</li>
+                <li><Link to='/order'>Pre order</Link><span id='orderCount'>{preoders.length}</span></li>
             </ul>
         </div>
     )

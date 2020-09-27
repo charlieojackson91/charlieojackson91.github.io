@@ -144,11 +144,12 @@ a:hover {
   border: solid #C6DB90 1px;
   font-size: 1.25rem;
   background: #e3edca;
-  margin: 15px;
+  margin: 15px 0;
 }
 
 .btn:hover {
   background: #a3bd5c;
+  cursor: pointer;
 }
 
 .btn a:hover {
@@ -274,3 +275,45 @@ footer {
 .menuCols h4 {
   margin-bottom: 0;
 }
+
+/* ORDERS */
+
+.orderList{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+select {
+  display: block;
+}
+
+select, input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 200px;
+}
+
+
+
+.orderTable {
+  text-align: left;
+  width: 45%;
+}
+
+.orderTable td {
+  padding: 2.5px 0;
+}
+
+.orderForm {
+  width: 45%;
+}
+
+#sumOrder {
+  color: #a3bd5c;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  border-top: 2px solid black;
+}
+
