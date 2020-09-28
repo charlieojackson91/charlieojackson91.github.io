@@ -31,30 +31,30 @@ function App() {
   const addPreoder = (preorder) => setPreoders([...preoders, preorder]);
 
   // count down timer
-  // const [countDown, setCountDown] = useState([])
+  const [countDown, setCountDown] = useState([])
 
-  //   const orderTime = new Date();
-  //   orderTime.setHours(17);
-  //   orderTime.setMinutes(0);
-  //   orderTime.setMinutes(0);
-  //   orderTime.setSeconds(0);
-  //   orderTime.setMilliseconds(0);
+    const orderTime = new Date();
+    orderTime.setHours(17);
+    orderTime.setMinutes(0);
+    orderTime.setMinutes(0);
+    orderTime.setSeconds(0);
+    orderTime.setMilliseconds(0);
 
-  //   useEffect(() => {
-  //       let distance = orderTime - new Date().getTime()
-  //       let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  //       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  //       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  //       setCountDown({hours, minutes, seconds})
-  //   }, [])
+    useEffect(() => {
+        let distance = orderTime - new Date().getTime()
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        setCountDown({hours, minutes, seconds})
+    }, [])
 
-  //   setInterval(() => {
-  //       let distance = orderTime - new Date().getTime()
-  //       let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  //       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  //       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  //       setCountDown({hours, minutes, seconds})
-  //   }, 1000)
+    setInterval(() => {
+        let distance = orderTime - new Date().getTime()
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        setCountDown({hours, minutes, seconds})
+    }, 1000)
   
   return (
     <div>
@@ -68,6 +68,7 @@ function App() {
               img='http://thedoughshack.co.uk/wp-content/uploads/2018/10/20180311-THE_DOUGH_SHACK_001.jpg'
               alt='pizza at dinner table'
               text="We're The Dough Shack - Traditional wood fired piza from our vans and pop-up pizzeria."
+              timer={countDown}
             />
             <div className='van-pizzeria-divide'>
               <Vans/>
@@ -87,6 +88,7 @@ function App() {
             <Banner 
               img='http://thedoughshack.co.uk/wp-content/uploads/2017/05/Pizza-header-resized.jpg'
               alt='close up of nduja pizza'
+              timer={countDown}
             />
             <Content
             title='Pizzas'
@@ -108,6 +110,7 @@ function App() {
             <Banner 
               img='http://thedoughshack.co.uk/wp-content/uploads/2016/06/About-header-resized.jpg'
               alt='the dough shack logo'
+              timer={countDown}
             />
             <Content
             title='About Us'
@@ -126,6 +129,7 @@ function App() {
             <Banner 
               img='http://thedoughshack.co.uk/wp-content/uploads/2016/06/About-header-resized.jpg'
               alt='the dough shack logo'
+              timer={countDown}
             />
             <Content
               title='View your orders'
@@ -141,6 +145,7 @@ function App() {
             <Banner 
               img='http://thedoughshack.co.uk/wp-content/uploads/2016/06/About-header-resized.jpg'
               alt='the dough shack logo'
+              timer={countDown}
             />
             <Sale data={preoders}/>
           </Route>

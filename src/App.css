@@ -102,6 +102,19 @@ a:hover {
   font-size: 1.5rem;
 }
 
+.countDown {
+  position: absolute;
+  right: 10px;
+  top: 100px;
+  background: black;
+  padding: 10px;
+  color: white;
+  opacity: 0.8;
+  border-radius: 6px;
+  border: solid #C6DB90 4px;
+}
+
+
 /* TIMETABLES */
 .van-pizzeria-divide {
   display: flex;
