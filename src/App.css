@@ -389,7 +389,6 @@ select, input {
 
 .divFlex {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -398,7 +397,15 @@ select, input {
   margin: 10px 0;
   height: 100px;
   border: 1px solid black;
+}
+
+.gameBoxHidden {
+  
   background: red;
+}
+
+.gameBoxClear {
+  background: transparent;
 }
 
 .gameBox:hover {
