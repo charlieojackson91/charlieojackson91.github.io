@@ -400,7 +400,6 @@ select, input {
 }
 
 .gameBoxHidden {
-  
   background: red;
 }
 
@@ -411,4 +410,9 @@ select, input {
 .gameBox:hover {
   background: lightcoral;
   cursor: pointer;
+}
+
+#winner {
+  font-size: 1.5rem;
+  color: red;
 }
