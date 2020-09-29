@@ -14,6 +14,7 @@ import Gallery from './components/Gallery';
 import Menu from './components/Menu';
 import Preoder from './components/Preoder';
 import Sale from './components/Sale';
+import Game from './components/Game';
 
 // application
 function App() {
@@ -148,6 +149,7 @@ function App() {
               timer={countDown}
             />
             <Sale data={preoders}/>
+            <Game/>
           </Route>
         
         </Switch>

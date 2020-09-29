@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import {Link} from "react-router-dom";
 
 let token = 'YOUR_TOKEN'
 let orderNumber = new Date();
@@ -183,7 +184,8 @@ const Preoder = ({data})=>{
 								}
 							</select>
 						</fieldset>
-						<button onClick={()=>makePayment(total)} className='btn'>Confirm and pay for preoder</button>
+						<Link to='./confirmation'><button className='btn'>Confirm and pay for preoder</button></Link>
+						{/* <button onClick={()=>makePayment(total)} className='btn'>Confirm and pay for preoder</button> */}
 					</form>
 				</div>
 			</div>

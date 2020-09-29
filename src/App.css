@@ -380,3 +380,28 @@ select, input {
   border-top: 2px solid black;
 }
 
+/* GAME  */
+
+.gameCont {
+  width: 80%;
+  margin: auto;
+}
+
+.divFlex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.gameBox {
+  width: 45%;
+  margin: 10px 0;
+  height: 100px;
+  border: 1px solid black;
+  background: red;
+}
+
+.gameBox:hover {
+  background: lightcoral;
+  cursor: pointer;
+}
