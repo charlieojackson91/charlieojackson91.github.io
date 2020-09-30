@@ -397,14 +397,13 @@ select, input {
   margin: 10px 0;
   height: 100px;
   border: 1px solid black;
-}
-
-.gameBoxHidden {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  font-size: 2em;
   background: red;
-}
-
-.gameBoxClear {
-  background: transparent;
+  transition: background-color 1000ms;
 }
 
 .gameBox:hover {
