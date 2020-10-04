@@ -32,30 +32,31 @@ function App() {
   const addPreoder = (preorder) => setPreoders([...preoders, preorder]);
 
   // count down timer
-  // const [countDown, setCountDown] = useState([])
+  const [countDown, setCountDown] = useState([])
+  const [interv,setInterv] = useState(null)
 
-  //   const orderTime = new Date();
-  //   orderTime.setHours(17);
-  //   orderTime.setMinutes(0);
-  //   orderTime.setMinutes(0);
-  //   orderTime.setSeconds(0);
-  //   orderTime.setMilliseconds(0);
 
-  //   useEffect(() => {
-  //       let distance = orderTime - new Date().getTime()
-  //       let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  //       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  //       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  //       setCountDown({hours, minutes, seconds})
-  //   }, [])
+    useEffect(() => {
+      const orderTime = new Date();
+      orderTime.setHours(17);
+      orderTime.setMinutes(0);
+      orderTime.setMinutes(0);
+      orderTime.setSeconds(0);
+      orderTime.setMilliseconds(0);
+      let distance = orderTime - new Date().getTime()
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      setCountDown({hours, minutes, seconds})
+      let timer = setInterval(() => {
+        setInterv(Symbol())
+      }, 1000)
+      return ()=>{
+        clearInterval(timer)
+      }
+    }, [interv])
 
-  //   setInterval(() => {
-  //       let distance = orderTime - new Date().getTime()
-  //       let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  //       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  //       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  //       setCountDown({hours, minutes, seconds})
-  //   }, 1000)
+    
   
   return (
     <div>
@@ -69,7 +70,7 @@ function App() {
               img='http://thedoughshack.co.uk/wp-content/uploads/2018/10/20180311-THE_DOUGH_SHACK_001.jpg'
               alt='pizza at dinner table'
               text="We're The Dough Shack - Traditional wood fired piza from our vans and pop-up pizzeria."
-              // timer={countDown}
+              timer={countDown}
             />
             <div className='van-pizzeria-divide'>
               <Vans/>

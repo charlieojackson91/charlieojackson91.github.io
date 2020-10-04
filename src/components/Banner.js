@@ -12,7 +12,11 @@ const Banner = (props) => {
                 </div>
                 <div className='countDown'>
                     <span>Time left to preorder:</span><br></br>
-                    {/* <span>{props.timer.hours}h {props.timer.minutes}m {props.timer.seconds}s</span> */}
+                    { 
+                        props.timer
+                    &&
+                        <span>{props.timer.hours}h {props.timer.minutes}m {props.timer.seconds}s</span> 
+                    }
                 </div>
             </div>
         );

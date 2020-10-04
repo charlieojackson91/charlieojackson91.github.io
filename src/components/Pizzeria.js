@@ -1,7 +1,16 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Contact from './Contact';
 
 const Pizzeria = () => {
+
+    useEffect(()=>{
+        let timer = setInterval(()=>console.log('order pizza'),1000)
+        return ()=>{
+            clearInterval(timer);
+            console.log('stop')
+        }
+    },[])
+
     return (
         <div className='rightColumn'>
             <div className='pizzeria'>
