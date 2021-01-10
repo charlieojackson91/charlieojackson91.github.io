@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/dough-shack/static/css/main.50bcb5f5.chunk.css",
+    "main.js": "/dough-shack/static/js/main.b0a44069.chunk.js",
+    "main.js.map": "/dough-shack/static/js/main.b0a44069.chunk.js.map",
+    "runtime-main.js": "/dough-shack/static/js/runtime-main.c826d5d3.js",
+    "runtime-main.js.map": "/dough-shack/static/js/runtime-main.c826d5d3.js.map",
+    "static/js/2.7d4fb125.chunk.js": "/dough-shack/static/js/2.7d4fb125.chunk.js",
+    "static/js/2.7d4fb125.chunk.js.map": "/dough-shack/static/js/2.7d4fb125.chunk.js.map",
+    "index.html": "/dough-shack/index.html",
+    "precache-manifest.82acacf3ff3398a05146cc2ee0167949.js": "/dough-shack/precache-manifest.82acacf3ff3398a05146cc2ee0167949.js",
+    "service-worker.js": "/dough-shack/service-worker.js",
+    "static/css/main.50bcb5f5.chunk.css.map": "/dough-shack/static/css/main.50bcb5f5.chunk.css.map",
+    "static/js/2.7d4fb125.chunk.js.LICENSE.txt": "/dough-shack/static/js/2.7d4fb125.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c826d5d3.js",
+    "static/js/2.7d4fb125.chunk.js",
+    "static/css/main.50bcb5f5.chunk.css",
+    "static/js/main.b0a44069.chunk.js"
+  ]
+}
