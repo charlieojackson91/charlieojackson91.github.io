@@ -10,7 +10,7 @@ const Header = ({preoders}) => {
                     <li><Link to='/pizza'>Pizza</Link></li>
                     <li><Link to='/about-us'>About us</Link></li>
                     <li id='preOrder'><Link to='/order'>Pre order</Link><span id='orderCount'>{preoders.length}</span></li>
-                    <li><Link to='/confirmation'>confirmation</Link></li>
+                    {/* <li><Link to='/confirmation'>confirmation</Link></li> */}
                 </ul>
             </div>
         </div>

@@ -16,22 +16,22 @@ import Preoder from './components/Preoder';
 import Sale from './components/Sale';
 import Game from './components/Game';
 
-import * as firebase from 'firebase/app';
-import 'firebase/database';
+// import * as firebase from 'firebase/app';
+// import 'firebase/database';
 
 
 // firebase credentials
-const firebaseConfig = {
-  apiKey: "AIzaSyChT9s-FLAzIJMM20c-VWEBbVM3V_D0-vk",
-  authDomain: "the-dough-shack.firebaseapp.com",
-  databaseURL: "https://the-dough-shack.firebaseio.com",
-  projectId: "the-dough-shack",
-  storageBucket: "the-dough-shack.appspot.com",
-  messagingSenderId: "902018859305",
-  appId: "1:902018859305:web:3d1e07922ff203d8ffb738"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyChT9s-FLAzIJMM20c-VWEBbVM3V_D0-vk",
+//   authDomain: "the-dough-shack.firebaseapp.com",
+//   databaseURL: "https://the-dough-shack.firebaseio.com",
+//   projectId: "the-dough-shack",
+//   storageBucket: "the-dough-shack.appspot.com",
+//   messagingSenderId: "902018859305",
+//   appId: "1:902018859305:web:3d1e07922ff203d8ffb738"
+// };
 
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 
 // application
 function App() {
@@ -45,15 +45,15 @@ function App() {
     {vanID:4, vanLocation:'Cobham', hours:'5-9'}
   ];
 
-  useEffect(() => {
-    firebase.database().ref('preorders/').once('value')
-      .then(data => data.val())
-      .then(res => setPreoders(Object.values(res)))
-  }, [])
+  // useEffect(() => {
+  //   firebase.database().ref('preorders/').once('value')
+  //     .then(data => data.val())
+  //     .then(res => setPreoders(Object.values(res)))
+  // }, [])
 
   // update preorders with existing orders plus new order
   const addPreoder = (preorder) => {
-    firebase.database().ref('preorders/').push().set(preorder)
+    // firebase.database().ref('preorders/').push().set(preorder)
     setPreoders([...preoders, preorder]);
   } 
 
